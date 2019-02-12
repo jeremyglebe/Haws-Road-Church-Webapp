@@ -15,9 +15,14 @@ export class GlobalService {
       icon: 'home'
     },
     {
+      title: 'About',
+      url: '/about',
+      icon: 'paper'
+    },
+    {
       title: 'Contact',
       url: '/contact',
-      icon: 'contact'
+      icon: 'person'
     }
   ];
 

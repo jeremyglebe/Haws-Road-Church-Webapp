@@ -1,0 +1,18 @@
+<ion-card>
+
+  <ion-card-header>
+    <ion-card-title>{{user_info['displayName']}}</ion-card-title>
+  </ion-card-header>
+
+  <ion-card-content>
+
+    <ion-avatar slot="start">
+      <img [src]="user_info['photoURL']">
+    </ion-avatar>
+
+    <ion-card-subtitle>{{user_info['phone']}}</ion-card-subtitle>
+    <ion-card-subtitle>{{user_info['email']}}</ion-card-subtitle>
+
+  </ion-card-content>
+
+</ion-card>

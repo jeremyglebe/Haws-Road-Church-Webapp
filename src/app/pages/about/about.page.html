@@ -1,0 +1,39 @@
+<app-header page_title="About Us"></app-header>
+
+<ion-content padding>
+  <app-page-tabs></app-page-tabs>
+
+  <ion-content padding>
+
+    <!-- I'm not making separate components for all of this because
+      this is pretty well all this page will be used for... -->
+
+    <ion-title>
+      <br>
+      Mission Statement
+    </ion-title>
+    <div class="Mission" *ngIf="info.info != null">
+      {{info.info['mission']}}
+    </div>
+
+    <!--Beliefs List-->
+    <ion-list>
+
+      <ion-item>
+        <ion-title>
+          Our Beliefs
+        </ion-title>
+      </ion-item>
+
+      <div *ngIf="beliefs.beliefs != null">
+        <div class="Belief" *ngFor="let belief of beliefs.beliefs">
+          {{belief['statement']}}
+          <br>
+          {{belief['scripture']}}.
+          <ion-item-divider></ion-item-divider>
+        </div>
+      </div>
+
+    </ion-list>
+
+  </ion-content>

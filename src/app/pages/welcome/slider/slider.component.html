@@ -1,15 +1,16 @@
 <ion-slides pager="true" [options]="slideOpts">
 
-  <ion-slide>
-    <h1>Slide 1</h1>
-  </ion-slide>
-  
-  <ion-slide>
-    <h1>Slide 2</h1>
-  </ion-slide>
-  
-  <ion-slide>
-    <h1>Slide 3</h1>
+  <ion-slide style="background-image: url('../../../../assets/church_sepia_dark.jpg');">
+    <ion-row>
+      <ion-col>
+          <ion-title><b>Haws Road Community Church</b></ion-title>
+          <br>
+          <div class="WelcomeMsg" *ngIf="info.info != null">
+            <b>{{info.info['welcome']}}</b>
+          </div>
+          <div class="Address" *ngIf="info.info != null">({{info.info['address']}})</div>
+      </ion-col>
+    </ion-row>
   </ion-slide>
 
 </ion-slides>

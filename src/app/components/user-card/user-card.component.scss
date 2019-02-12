@@ -1,0 +1,20 @@
+ion-card{
+    width: 30%;
+    left: 35%;
+    --background: var(--color-dark-back);
+    --color: var(--ion-color-light);
+    ion-avatar{
+        width: 100%;
+        height: auto;
+    }
+    ion-card-title{
+        color: var(--ion-color-light);
+        text-align: center;
+        font-size: 3rem;
+    }
+    ion-card-subtitle{
+        color: var(--ion-color-light);
+        text-align: center;
+        font-size: 2rem;
+    }
+}
