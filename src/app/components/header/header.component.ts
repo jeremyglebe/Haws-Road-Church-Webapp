@@ -13,7 +13,6 @@ export class HeaderComponent implements OnInit {
    }
 
   ngOnInit() {
-    console.log('TITLE, ', this.page_title);
   }
 
 }

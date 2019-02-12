@@ -1,0 +1,15 @@
+<ion-row>
+
+  <ion-col *ngFor="let p of global.appPages">
+    <ion-button expand="full" fill="clear" (click)="reroute(p.url)">
+      <div>
+        <ion-icon [name]="p.icon"></ion-icon>
+        <br>
+        <ion-label>{{p.title}}</ion-label>
+      </div>
+    </ion-button>
+  </ion-col>
+
+</ion-row>
+
+<ion-item-divider></ion-item-divider>

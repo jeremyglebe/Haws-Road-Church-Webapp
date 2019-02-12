@@ -6,26 +6,28 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { ContactPage } from './contact.page';
-import { ComponentsModule } from './../components/components.module';
+import { WelcomePage } from './welcome.page';
+import { ComponentsModule } from './../../components/components.module';
+import { SliderComponent } from './slider/slider.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: ContactPage
+    component: WelcomePage
   }
 ];
 
 @NgModule({
   imports: [
     CommonModule,
+    ComponentsModule,
     FormsModule,
     IonicModule,
-    RouterModule.forChild(routes),
-    ComponentsModule
+    RouterModule.forChild(routes)
   ],
   declarations: [
-    ContactPage
+    WelcomePage,
+    SliderComponent
   ]
 })
-export class ContactPageModule {}
+export class WelcomePageModule { }
