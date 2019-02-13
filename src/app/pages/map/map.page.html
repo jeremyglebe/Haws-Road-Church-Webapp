@@ -1,0 +1,16 @@
+<app-header page_title="Locate Us"></app-header>
+
+<ion-content padding>
+  <app-page-tabs></app-page-tabs>
+
+  <iframe class="MyMap" [src]="mapURL | safe" allowfullscreen></iframe>
+  <div *ngIf="navs.navs != null">
+    <ion-button size="large" expand="block" *ngFor="let loc of navs.navs" (click)="mapFrom(loc['lat'], loc['lon'])">
+      Directions from {{loc['name']}}
+    </ion-button>
+  </div>
+  <ion-button size="large" expand="block" (click)="mapReset()">
+    I don't need directions (Reset to original map)
+  </ion-button>
+
+</ion-content>

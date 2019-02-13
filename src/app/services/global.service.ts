@@ -23,6 +23,11 @@ export class GlobalService {
       title: 'Contact',
       url: '/contact',
       icon: 'person'
+    },
+    {
+      title: 'Locate',
+      url: '/map',
+      icon: 'map'
     }
   ];
 

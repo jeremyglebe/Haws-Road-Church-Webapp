@@ -6,7 +6,9 @@ const routes: Routes = [
   { path: 'welcome', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', loadChildren: './pages/welcome/welcome.module#WelcomePageModule' },
   { path: 'contact', loadChildren: './pages/contact/contact.module#ContactPageModule' },
-  { path: 'about', loadChildren: './pages/about/about.module#AboutPageModule' }
+  { path: 'about', loadChildren: './pages/about/about.module#AboutPageModule' },
+  { path: 'map', loadChildren: './pages/map/map.module#MapPageModule' },
+  { path: 'add-belief', loadChildren: './pages/add-belief/add-belief.module#AddBeliefPageModule' }
 ];
 
 @NgModule({

@@ -20,4 +20,14 @@ export class BeliefsService {
       console.log('Changes to beliefs: ', changes);
     });
   }
+
+  async addBelief(statement: string, scripture: string, order: number){
+    this.afs.collection('apps').doc('ccip')
+      .collection('beliefs').add({
+        statement: statement,
+        scripture: scripture,
+        order: order
+      });
+  }
+
 }

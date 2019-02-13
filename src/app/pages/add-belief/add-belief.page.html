@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Add a Belief</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-item>
+    <ion-label position="floating">Belief Statement</ion-label>
+    <ion-textarea [(ngModel)]="statement"></ion-textarea>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Scriptural Source</ion-label>
+    <ion-input [(ngModel)]="scripture"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Order in the list</ion-label>
+    <ion-input [(ngModel)]="order"></ion-input>
+  </ion-item>
+
+  <ion-button size="small" expand="full" fill="clear" (click)="add()">
+    Add
+  </ion-button>
+
+  <ion-button size="small" expand="full" fill="clear" (click)="cancel()">
+    Cancel
+  </ion-button>
+
+</ion-content>

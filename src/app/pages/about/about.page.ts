@@ -1,6 +1,7 @@
 import { BeliefsService } from './../../services/beliefs.service';
 import { AppInfoService } from './../../services/app-info.service';
 import { Component, OnInit } from '@angular/core';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-about',
@@ -11,10 +12,15 @@ export class AboutPage implements OnInit {
 
   constructor(
     private info: AppInfoService,
-    private beliefs: BeliefsService
+    private beliefs: BeliefsService,
+    private navCtrl: NavController
   ) { }
 
   ngOnInit() {
+  }
+
+  addBeliefPage() {
+    this.navCtrl.navigateRoot('/add-belief');
   }
 
 }
