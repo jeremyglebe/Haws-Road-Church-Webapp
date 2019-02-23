@@ -1,0 +1,30 @@
+<ion-content padding>
+
+    <ion-row *ngIf="!g.smallScreen()">
+
+        <ion-col size="8">
+
+            <img [src]="link">
+
+        </ion-col>
+
+        <ion-col size="4">
+            <ion-button size="large" expand="block" *ngIf="!featured" (click)="feature()">Feature on Welcome Page</ion-button>
+            <ion-button size="large" expand="block" *ngIf="featured" (click)="feature()">Remove from Welcome Page</ion-button>
+            <ion-button size="large" expand="block" (click)="close()">Close</ion-button>
+            <ion-button size="large" expand="block" color="danger" (click)="delete()">Delete from website</ion-button>
+        </ion-col>
+
+    </ion-row>
+
+    <div *ngIf="g.smallScreen()">
+        <img [src]="link">
+        <ion-button expand="block" *ngIf="!featured" (click)="feature()">Feature on Welcome Page</ion-button>
+        <ion-button expand="block" *ngIf="featured" (click)="feature()">Remove from Welcome Page</ion-button>
+        <ion-button expand="block" (click)="close()")>Close</ion-button>
+        <ion-button expand="block" color="danger" (click)="delete()">Delete from website</ion-button>
+    </div>
+
+    <ion-text>{{caption}}</ion-text>
+
+</ion-content>

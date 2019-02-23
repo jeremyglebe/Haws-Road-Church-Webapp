@@ -1,4 +1,7 @@
+import { GalleryModalPage } from './../../components/gallery-modal/gallery-modal.page';
+import { MediaService } from './../../services/media.service';
 import { Component, OnInit } from '@angular/core';
+import { ModalController } from '@ionic/angular';
 
 @Component({
   selector: 'app-gallery',
@@ -7,9 +10,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GalleryPage implements OnInit {
 
-  constructor() { }
+  constructor(
+    private modalCtrl: ModalController,
+    private media: MediaService
+  ) { }
 
   ngOnInit() {
+  }
+
+  async viewImage(path, link, caption, featured){
+    const image_modal = await this.modalCtrl.create({
+      component: GalleryModalPage,
+      componentProps: {
+        caption: caption,
+        link: link,
+        path: path,
+        featured: featured
+      },
+      cssClass: 'MyImageModal'
+    });
+    await image_modal.present();
   }
 
 }

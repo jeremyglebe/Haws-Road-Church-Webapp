@@ -1,3 +1,4 @@
+import { MediaService } from './../../../services/media.service';
 import { Component, OnInit } from '@angular/core';
 
 import { AppInfoService } from './../../../services/app-info.service';
@@ -12,7 +13,8 @@ export class SliderComponent implements OnInit {
   private slideOpts = {};
 
   constructor(
-    private info: AppInfoService
+    private info: AppInfoService,
+    private media: MediaService
   ) { }
 
   ngOnInit() {

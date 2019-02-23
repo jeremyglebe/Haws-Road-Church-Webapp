@@ -13,4 +13,6 @@
     </ion-row>
   </ion-slide>
 
+  <ion-slide *ngFor="let image of media.featured" [ngStyle]="{'background-image': 'url(' + image['link'] + ')'}"></ion-slide>
+
 </ion-slides>

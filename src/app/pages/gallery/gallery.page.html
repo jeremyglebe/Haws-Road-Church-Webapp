@@ -1,9 +1,18 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>gallery</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-header page_title="Gallery"></app-header>
 
 <ion-content padding>
+  <app-page-tabs></app-page-tabs>
+
+  <ion-row>
+
+    <ion-col size="12" size-sm="6" size-md="4" size-lg="2" *ngFor="let image of media.gallery">
+      <!-- <ion-button (click)="viewImage(image['path'],image['link'],image['caption'],image['featured'])"> -->
+
+      <img [src]="image['link']" (click)="viewImage(image['path'],image['link'],image['caption'],image['feature'])">
+
+      <!-- </ion-button> -->
+    </ion-col>
+
+  </ion-row>
 
 </ion-content>

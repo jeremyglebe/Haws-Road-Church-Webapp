@@ -1,3 +1,4 @@
+import { GalleryModalPage } from 'src/app/components/gallery-modal/gallery-modal.page';
 
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -19,9 +20,12 @@ import { AngularFireStorageModule } from 'angularfire2/storage';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    GalleryModalPage
   ],
-  entryComponents: [],
+  entryComponents: [
+    GalleryModalPage
+  ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(),

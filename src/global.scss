@@ -9,3 +9,21 @@
 @import '~@ionic/angular/css/text-alignment.css';
 @import '~@ionic/angular/css/text-transformation.css';
 @import '~@ionic/angular/css/flex-utils.css';
+
+// Why is this here, in the global section?
+// Well it doesn't seem to WORK anywhere else
+// The Image Modal (for gallery) is considered a separate page...
+// So it seems it has to have a CSS class defined for both the
+// gallery page and the modal page. So its global. Looking for a
+// more clean solution.
+.MyImageModal{
+    --width: 100%;
+
+    @media(max-width: 480px){
+        --max-height: 85%!important;
+    }
+    
+    ion-content{
+        --width: 100%!important;
+    }
+}

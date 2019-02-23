@@ -34,6 +34,17 @@ export class GlobalService {
     }
   ];
 
+  public readonly appMenu = [
+    {
+      // Title for the button
+      title: 'Gallery',
+      // URL to direct to
+      url: '/gallery',
+      // Icon for buttons
+      icon: 'photos'
+    }
+  ];
+
   constructor(
     private platform: Platform
   ) { }
