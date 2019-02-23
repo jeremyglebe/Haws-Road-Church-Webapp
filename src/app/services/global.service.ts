@@ -1,9 +1,12 @@
+import { Platform } from '@ionic/angular';
 import { Injectable } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
 })
 export class GlobalService {
+
+  public readonly width = this.platform.width();
 
   public readonly appTabs = [
     {
@@ -31,5 +34,12 @@ export class GlobalService {
     }
   ];
 
-  constructor() { }
+  constructor(
+    private platform: Platform
+  ) { }
+
+  smallScreen() {
+    return this.width < 640;
+  }
+
 }

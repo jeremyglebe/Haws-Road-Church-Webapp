@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationService } from 'src/app/services/navigation.service';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-map',
@@ -15,7 +16,8 @@ export class MapPage implements OnInit {
   mapURL = this.defaultURL;
 
   constructor(
-    private navs: NavigationService
+    private navs: NavigationService,
+    private navCtrl: NavController
   ) { }
 
   ngOnInit() {
@@ -29,6 +31,14 @@ export class MapPage implements OnInit {
 
   mapReset(){
     this.mapURL = this.defaultURL;
+  }
+
+  addMapPage() {
+    this.navCtrl.navigateRoot('/add-map');
+  }
+
+  delete(lat, lon){
+    this.navs.deleteMap(lat, lon);
   }
 
 }

@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Add a Map</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-item>
+    <ion-label position="floating">Name</ion-label>
+    <ion-textarea [(ngModel)]="name"></ion-textarea>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Latitude</ion-label>
+    <ion-input [(ngModel)]="latitude"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Longitude</ion-label>
+    <ion-input [(ngModel)]="longitude"></ion-input>
+  </ion-item>
+
+  <ion-button size="small" expand="full" fill="clear" (click)="add()">
+    Add
+  </ion-button>
+
+  <ion-button size="small" expand="full" fill="clear" (click)="cancel()">
+    Cancel
+  </ion-button>
+
+</ion-content>

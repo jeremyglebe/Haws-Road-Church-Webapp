@@ -22,8 +22,8 @@ export class MediaService {
     this.galleyListener.subscribe((changes) => {
       this.gallery = changes;
       console.log('Changes to gallery: ', changes)
-      let fpics = [];
-      for (let image of this.gallery) {
+      const fpics = [];
+      for (const image of this.gallery) {
         if (image.feature) {
           fpics.push(image);
         }

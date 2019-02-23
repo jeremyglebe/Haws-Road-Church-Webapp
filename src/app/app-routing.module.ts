@@ -8,7 +8,9 @@ const routes: Routes = [
   { path: 'contact', loadChildren: './pages/contact/contact.module#ContactPageModule' },
   { path: 'about', loadChildren: './pages/about/about.module#AboutPageModule' },
   { path: 'map', loadChildren: './pages/map/map.module#MapPageModule' },
-  { path: 'add-belief', loadChildren: './pages/add-belief/add-belief.module#AddBeliefPageModule' }
+  { path: 'add-belief', loadChildren: './pages/add-belief/add-belief.module#AddBeliefPageModule' },
+  { path: 'add-map', loadChildren: './pages/add-map/add-map.module#AddMapPageModule' },
+  { path: 'gallery', loadChildren: './pages/gallery/gallery.module#GalleryPageModule' }
 ];
 
 @NgModule({

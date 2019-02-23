@@ -6,17 +6,19 @@ ion-slides{
         background-position: center; /* Center the image */
         background-repeat: no-repeat; /* Do not repeat the image */
         background-size: cover; /* Resize the background image to cover the entire container */
-        ion-title{
-            font-size: 2rem;
-            color: var(--ion-color-light-tint);
+        ion-title{ color: var(--ion-color-light-tint); }
+        .Address{ color: var(--ion-color-light-tint); }
+        .WelcomeMsg{ color: var(--ion-color-light); }
+
+        @media(min-width: 0px){
+            ion-title{ font-size: 1rem; }
+            .Address{ font-size: 1rem; }
+            .WelcomeMsg{ font-size: 2rem; }
         }
-        .Address{
-            font-size: 1.5rem;
-            color: var(--ion-color-light-tint);
-        }
-        .WelcomeMsg{
-            font-size: 3.5rem;
-            color: var(--ion-color-light);
+        @media(min-width: 640px){
+            ion-title{ font-size: 2rem; }
+            .Address{ font-size: 1.5rem; }
+            .WelcomeMsg{ font-size: 3.5rem; }
         }
     }
 }

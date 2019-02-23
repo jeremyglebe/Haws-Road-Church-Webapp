@@ -14,7 +14,7 @@
 
       <ion-list>
         <!--Menu items, toggles, routing-->
-        <ion-menu-toggle auto-hide="false" *ngFor="let p of global.appTabs">
+        <ion-menu-toggle [hidden]="!global.smallScreen()" auto-hide="false" *ngFor="let p of global.appTabs">
           <ion-item [routerDirection]="'root'" [routerLink]="[p.url]">
             <!--What items in the menu look like-->
             <ion-icon slot="start" [name]="p.icon"></ion-icon>
