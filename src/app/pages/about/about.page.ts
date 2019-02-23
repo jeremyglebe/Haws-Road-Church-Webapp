@@ -23,4 +23,8 @@ export class AboutPage implements OnInit {
     this.navCtrl.navigateRoot('/add-belief');
   }
 
+  delete(statement, scripture){
+    this.beliefs.deleteBelief(statement, scripture);
+  }
+
 }

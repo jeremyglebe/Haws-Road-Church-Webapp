@@ -3,42 +3,39 @@
 <ion-content padding>
   <app-page-tabs></app-page-tabs>
 
-  <ion-content padding>
-
-    <!-- I'm not making separate components for all of this because
+  <!-- I'm not making separate components for all of this because
       this is pretty well all this page will be used for... -->
 
-    <ion-title>
+  <ion-title>
+    <br>
+    Mission Statement
+  </ion-title>
+  <div class="Mission" *ngIf="info.info != null">
+    {{info.info['mission']}}
+  </div>
+
+  <br>
+  <!--Beliefs List-->
+  <ion-title>
+    Our Beliefs
+  </ion-title>
+  <ion-item-divider></ion-item-divider>
+
+  <div *ngIf="beliefs.beliefs != null">
+    <div class="Belief" *ngFor="let belief of beliefs.beliefs">
+      {{belief['statement']}}
       <br>
-      Mission Statement
-    </ion-title>
-    <div class="Mission" *ngIf="info.info != null">
-      {{info.info['mission']}}
+      {{belief['scripture']}}.
+      <br>
+      <ion-button fill="clear" color="danger" (click)="delete(belief['statement'], belief['scripture'])">
+        <ion-icon slot="icon-only" name="trash"></ion-icon>
+      </ion-button>
+      <ion-item-divider></ion-item-divider>
     </div>
+  </div>
 
-    <!--Beliefs List-->
-    <ion-list>
+  <ion-button size="small" expand="full" fill="clear" (click)="addBeliefPage()">
+    Add a new belief to this list
+  </ion-button>
 
-      <ion-item>
-        <ion-title>
-          Our Beliefs
-        </ion-title>
-      </ion-item>
-
-      <div *ngIf="beliefs.beliefs != null">
-        <div class="Belief" *ngFor="let belief of beliefs.beliefs">
-          {{belief['statement']}}
-          <br>
-          {{belief['scripture']}}.
-          <ion-item-divider></ion-item-divider>
-        </div>
-      </div>
-
-    </ion-list>
-
-
-    <ion-button size="small" expand="full" fill="clear" (click)="addBeliefPage()">
-      Add a new belief to this list
-    </ion-button>
-
-  </ion-content>
+</ion-content>

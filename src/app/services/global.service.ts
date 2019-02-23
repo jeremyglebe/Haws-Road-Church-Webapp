@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class GlobalService {
 
-  public readonly appPages = [
+  public readonly appTabs = [
     {
       // Title for the button
       title: 'Home',
