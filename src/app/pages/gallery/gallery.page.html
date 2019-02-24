@@ -3,14 +3,16 @@
 <ion-content padding>
   <app-page-tabs></app-page-tabs>
 
+  <ion-button size="small" expand="full" fill="clear" (click)="addImagePage()">
+    Add a new image to the gallery
+  </ion-button>
+
   <ion-row>
 
     <ion-col size="12" size-sm="6" size-md="4" size-lg="2" *ngFor="let image of media.gallery">
-      <!-- <ion-button (click)="viewImage(image['path'],image['link'],image['caption'],image['featured'])"> -->
 
       <img [src]="image['link']" (click)="viewImage(image['path'],image['link'],image['caption'],image['feature'])">
 
-      <!-- </ion-button> -->
     </ion-col>
 
   </ion-row>

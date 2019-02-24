@@ -10,7 +10,8 @@ const routes: Routes = [
   { path: 'map', loadChildren: './pages/map/map.module#MapPageModule' },
   { path: 'add-belief', loadChildren: './pages/add-belief/add-belief.module#AddBeliefPageModule' },
   { path: 'add-map', loadChildren: './pages/add-map/add-map.module#AddMapPageModule' },
-  { path: 'gallery', loadChildren: './pages/gallery/gallery.module#GalleryPageModule' }
+  { path: 'gallery', loadChildren: './pages/gallery/gallery.module#GalleryPageModule' },
+  { path: 'add-file', loadChildren: './pages/add-file/add-file.module#AddFilePageModule' }
 ];
 
 @NgModule({

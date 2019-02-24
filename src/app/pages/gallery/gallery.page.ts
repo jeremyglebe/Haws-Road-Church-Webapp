@@ -1,7 +1,7 @@
 import { GalleryModalPage } from './../../components/gallery-modal/gallery-modal.page';
 import { MediaService } from './../../services/media.service';
 import { Component, OnInit } from '@angular/core';
-import { ModalController } from '@ionic/angular';
+import { ModalController, NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-gallery',
@@ -12,7 +12,8 @@ export class GalleryPage implements OnInit {
 
   constructor(
     private modalCtrl: ModalController,
-    private media: MediaService
+    private media: MediaService,
+    private navCtrl: NavController
   ) { }
 
   ngOnInit() {
@@ -30,6 +31,10 @@ export class GalleryPage implements OnInit {
       cssClass: 'MyImageModal'
     });
     await image_modal.present();
+  }
+
+  addImagePage() {
+    this.navCtrl.navigateRoot('/add-file');
   }
 
 }

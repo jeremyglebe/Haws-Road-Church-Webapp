@@ -1,3 +1,4 @@
+import { DirectivesModule } from './directives/directives.module';
 import { GalleryModalPage } from 'src/app/components/gallery-modal/gallery-modal.page';
 
 import { NgModule } from '@angular/core';
@@ -31,6 +32,7 @@ import { AngularFireStorageModule } from 'angularfire2/storage';
     IonicModule.forRoot(),
     AppRoutingModule,
     ComponentsModule,
+    DirectivesModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule.enablePersistence(),
     AngularFireAuthModule,

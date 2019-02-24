@@ -4,7 +4,8 @@
 
         <ion-col size="8">
 
-            <img [src]="link">
+            <img [src]="link"><br>
+            <ion-text>{{caption}}</ion-text>
 
         </ion-col>
 
@@ -19,12 +20,11 @@
 
     <div *ngIf="g.smallScreen()">
         <img [src]="link">
+        <ion-text>{{caption}}</ion-text>
         <ion-button expand="block" *ngIf="!featured" (click)="feature()">Feature on Welcome Page</ion-button>
         <ion-button expand="block" *ngIf="featured" (click)="feature()">Remove from Welcome Page</ion-button>
         <ion-button expand="block" (click)="close()")>Close</ion-button>
         <ion-button expand="block" color="danger" (click)="delete()">Delete from website</ion-button>
     </div>
-
-    <ion-text>{{caption}}</ion-text>
 
 </ion-content>
