@@ -11,7 +11,11 @@ const routes: Routes = [
   { path: 'add-belief', loadChildren: './pages/add-belief/add-belief.module#AddBeliefPageModule' },
   { path: 'add-map', loadChildren: './pages/add-map/add-map.module#AddMapPageModule' },
   { path: 'gallery', loadChildren: './pages/gallery/gallery.module#GalleryPageModule' },
-  { path: 'add-file', loadChildren: './pages/add-file/add-file.module#AddFilePageModule' }
+  { path: 'add-file', loadChildren: './pages/add-file/add-file.module#AddFilePageModule' },
+  { path: 'users', loadChildren: './pages/users/users.module#UsersPageModule' },
+  { path: 'profile', loadChildren: './pages/profile/profile.module#ProfilePageModule' },
+  { path: 'register', loadChildren: './pages/register/register.module#RegisterPageModule' },
+  { path: 'login', loadChildren: './pages/login/login.module#LoginPageModule' }
 ];
 
 @NgModule({

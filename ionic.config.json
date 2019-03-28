@@ -1,5 +1,7 @@
 {
   "name": "hrcc",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

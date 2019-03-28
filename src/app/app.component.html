@@ -31,6 +31,38 @@
           </ion-item>
         </ion-menu-toggle>
 
+        <!-- CONDITIONAL BUTTONS -->
+
+        <!-- REGISTRATION -->
+        <ion-menu-toggle auto-hide="false" *ngIf="!users.getCurrentUid()">
+          <ion-item [routerDirection]="'root'" routerLink="/register">
+            <ion-icon slot="start" name="person-add"></ion-icon>
+            <ion-label>Register</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+
+        <!-- LOGIN -->
+        <ion-menu-toggle auto-hide="false" *ngIf="!users.getCurrentUid()">
+          <ion-item [routerDirection]="'root'" routerLink="/login">
+            <ion-icon slot="start" name="log-in"></ion-icon>
+            <ion-label>Login</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+
+        <!-- PROFILE -->
+        <ion-menu-toggle auto-hide="false" *ngIf="users.getCurrentUid()">
+          <ion-item [routerDirection]="'root'" routerLink="/profile">
+            <ion-icon slot="start" name="person"></ion-icon>
+            <ion-label>Profile</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+
+        <!-- LOGOUT -->
+        <ion-item [routerDirection]="'root'" routerLink="/home" *ngIf="users.getCurrentUid()" (click)="doLogout()">
+          <ion-icon slot="start" name="log-out"></ion-icon>
+          <ion-label>Logout</ion-label>
+        </ion-item>
+
       </ion-list>
 
     </ion-content>

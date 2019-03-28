@@ -1,0 +1,31 @@
+<app-header page_title="Profile"></app-header>
+
+<ion-content padding>
+  <app-page-tabs></app-page-tabs>
+
+  <!--Profile picture-->
+  <ion-avatar *ngIf="users.getCurrentUid()">
+    <img [src]="photoURL || 'assets/church_sepia.jpg'">
+  </ion-avatar>
+
+  <!--Change the profile picture-->
+  <div text-center *ngIf="users.getCurrentUid()">
+    <ion-button shape="round" (click)="takePhoto()">
+      <ion-icon slot="icon-only" name="camera"></ion-icon>
+    </ion-button>
+  </div>
+
+  <!--Profile name-->
+  <ion-item *ngIf="users.getCurrentUid()">
+    <ion-label position="floating">Display Name</ion-label>
+    <ion-input [(ngModel)]="displayName"></ion-input>
+  </ion-item>
+
+  <!--Set profile name-->
+  <div text-center *ngIf="users.getCurrentUid()">
+    <ion-button shape="round" (click)="setName()">
+      Set Name
+    </ion-button>
+  </div>
+
+</ion-content>

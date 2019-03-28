@@ -1,11 +1,12 @@
 
 import { Component } from '@angular/core';
 
-import { Platform } from '@ionic/angular';
+import { Platform, MenuController } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 import { GlobalService } from './services/global.service';
+import { UsersService } from './services/users.service';
 
 @Component({
   selector: 'app-root',
@@ -17,7 +18,9 @@ export class AppComponent {
     private platform: Platform,
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
-    public global: GlobalService
+    public global: GlobalService,
+    public users: UsersService,
+    public menuCtrl: MenuController
   ) {
     this.initializeApp();
   }
@@ -28,4 +31,10 @@ export class AppComponent {
       this.splashScreen.hide();
     });
   }
+
+  async doLogout(){
+    await this.users.logout();
+    this.menuCtrl.close();
+  }
+
 }
