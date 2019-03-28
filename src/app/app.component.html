@@ -33,6 +33,14 @@
 
         <!-- CONDITIONAL BUTTONS -->
 
+        <!-- USER MANAGEMENT -->
+        <ion-menu-toggle auto-hide="false" *ngIf="authorized">
+          <ion-item [routerDirection]="'root'" routerLink="/users">
+            <ion-icon slot="start" name="contacts"></ion-icon>
+            <ion-label>Users</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+
         <!-- REGISTRATION -->
         <ion-menu-toggle auto-hide="false" *ngIf="!users.getCurrentUid()">
           <ion-item [routerDirection]="'root'" routerLink="/register">

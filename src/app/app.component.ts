@@ -14,6 +14,8 @@ import { UsersService } from './services/users.service';
 })
 export class AppComponent {
 
+  authorized = true;
+
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,

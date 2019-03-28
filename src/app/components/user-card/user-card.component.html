@@ -7,7 +7,7 @@
   <ion-card-content>
 
     <ion-avatar slot="start">
-      <img [src]="user_info['photoURL']">
+      <img [src]="user_info['photoURL'] || '../../../assets/church_sepia.jpg'">
     </ion-avatar>
 
     <ion-card-subtitle>{{user_info['phone']}}</ion-card-subtitle>

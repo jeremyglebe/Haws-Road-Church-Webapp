@@ -142,4 +142,25 @@ export class UsersService {
     }
   }
 
+  async toggleUserPublic(uid: string) {
+    let current = false;
+    try {
+      // Get the current public status of the user
+      const docRef = await this.afs.collection('apps/ccip/users').doc(uid).ref.get();
+      const doc = docRef.data();
+      if (doc['public']) {
+        current = doc['public'];
+      } else {
+        current = false;
+      }
+      // Update the user's public status
+      await this.afs.collection('apps/ccip/users')
+        .doc(uid).update({
+          'public': !current
+        });
+    } catch (e) {
+      throw e;
+    }
+  }
+
 }

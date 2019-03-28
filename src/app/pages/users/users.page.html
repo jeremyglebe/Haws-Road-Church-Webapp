@@ -1,9 +1,14 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>users</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-header page_title="User Management"></app-header>
 
 <ion-content padding>
+    <app-page-tabs></app-page-tabs>
+
+    <div class="DirTitle"><b>Users</b></div>
+    <ion-item-divider></ion-item-divider>
+    <div text-center *ngFor="let user of users.getUsersList()">
+      <app-user-card [user_info]="user"></app-user-card>
+      <ion-button *ngIf="user.public" (click)="users.toggleUserPublic(user.uid)">Remove from public directory</ion-button>
+      <ion-button *ngIf="!user.public" (click)="users.toggleUserPublic(user.uid)">Add to public directory</ion-button>
+    </div>
 
 </ion-content>
