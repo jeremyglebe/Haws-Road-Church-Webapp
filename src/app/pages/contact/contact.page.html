@@ -6,7 +6,6 @@
 
     <div class="DirTitle"><b>Directory</b></div>
     <ion-item-divider></ion-item-divider>
-    <app-user-card></app-user-card>
     <app-user-card *ngFor="let user of users.getDirectory()" [user_info]="user"></app-user-card>
 
 </ion-content>
