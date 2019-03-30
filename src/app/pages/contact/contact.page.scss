@@ -1,11 +1,28 @@
-.Address{
-    padding-top: 1%;
-    font-size: 3rem;
-    text-align: center;
+
+@media(min-width: 0px){
+    .Address{
+        padding-top: 1%;
+        font-size: 1.2rem;
+        text-align: center;
+    }
+    
+    .DirTitle{
+        padding-top: 2%;
+        font-size: 1.2rem;
+        text-align: center;
+    }
 }
 
-.DirTitle{
-    padding-top: 2%;
-    font-size: 3rem;
-    text-align: center;
+@media(min-width: 640px){
+    .Address{
+        padding-top: 1%;
+        font-size: 3rem;
+        text-align: center;
+    }
+    
+    .DirTitle{
+        padding-top: 2%;
+        font-size: 3rem;
+        text-align: center;
+    }
 }
