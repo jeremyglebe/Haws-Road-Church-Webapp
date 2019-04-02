@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UsersPage implements OnInit {
 
-  constructor(private users: UsersService) { }
+  constructor(public users: UsersService) { }
 
   ngOnInit() {
   }

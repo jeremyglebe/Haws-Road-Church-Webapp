@@ -12,7 +12,7 @@ import { NavController } from '@ionic/angular';
 export class PageTabsComponent implements OnInit {
 
   constructor(
-    private global: GlobalService,
+    public global: GlobalService,
     private navCtrl: NavController
   ) { }
 

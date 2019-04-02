@@ -14,9 +14,9 @@ export class ProfilePage implements OnInit {
   displayName = '';
 
   constructor(
-    private users: UsersService,
-    private camera: Camera,
-    private storage: AngularFireStorage
+    public users: UsersService,
+    public camera: Camera,
+    public storage: AngularFireStorage
   ) {
     users.getUserPhoto(users.getCurrentUid()).then((url) => {
       if (url) {

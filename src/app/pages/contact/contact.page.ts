@@ -12,8 +12,8 @@ import { AppInfoService } from './../../services/app-info.service';
 export class ContactPage implements OnInit {
 
   constructor(
-    private users: UsersService,
-    private info: AppInfoService
+    public users: UsersService,
+    public info: AppInfoService
   ) { }
 
   ngOnInit() {

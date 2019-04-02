@@ -11,8 +11,8 @@ import { NavController } from '@ionic/angular';
 export class AboutPage implements OnInit {
 
   constructor(
-    private info: AppInfoService,
-    private beliefs: BeliefsService,
+    public info: AppInfoService,
+    public beliefs: BeliefsService,
     private navCtrl: NavController
   ) { }
 

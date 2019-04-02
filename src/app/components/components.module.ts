@@ -9,6 +9,7 @@ import { UserCardComponent } from './user-card/user-card.component';
 import { UploaderComponent } from './uploader/uploader.component';
 import { UploadTaskComponent } from './upload-task/upload-task.component';
 import { DirectivesModule } from '../directives/directives.module';
+import { GalleryModalComponent } from './gallery-modal/gallery-modal.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { DirectivesModule } from '../directives/directives.module';
     PageTabsComponent,
     UserCardComponent,
     UploaderComponent,
-    UploadTaskComponent
+    UploadTaskComponent,
+    GalleryModalComponent
   ],
   imports: [
     CommonModule,
@@ -28,7 +30,8 @@ import { DirectivesModule } from '../directives/directives.module';
     PageTabsComponent,
     UserCardComponent,
     UploaderComponent,
-    UploadTaskComponent
+    UploadTaskComponent,
+    GalleryModalComponent
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

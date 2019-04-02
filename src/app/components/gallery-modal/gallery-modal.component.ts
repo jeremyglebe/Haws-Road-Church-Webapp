@@ -5,10 +5,10 @@ import { MediaService } from 'src/app/services/media.service';
 
 @Component({
   selector: 'app-gallery-modal',
-  templateUrl: './gallery-modal.page.html',
-  styleUrls: ['./gallery-modal.page.scss'],
+  templateUrl: './gallery-modal.component.html',
+  styleUrls: ['./gallery-modal.component.scss'],
 })
-export class GalleryModalPage implements OnInit {
+export class GalleryModalComponent implements OnInit {
 
   public caption;
   public link;
@@ -17,7 +17,7 @@ export class GalleryModalPage implements OnInit {
 
   constructor(
     private params: NavParams,
-    private g: GlobalService,
+    public g: GlobalService,
     private modalCtrl: ModalController,
     private media: MediaService
   ) { }
