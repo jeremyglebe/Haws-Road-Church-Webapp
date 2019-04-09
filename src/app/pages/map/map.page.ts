@@ -16,7 +16,7 @@ export class MapPage implements OnInit {
   mapURL = this.defaultURL;
 
   constructor(
-    private navs: NavigationService,
+    public navs: NavigationService,
     private navCtrl: NavController
   ) { }
 

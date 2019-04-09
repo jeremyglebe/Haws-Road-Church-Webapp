@@ -1,5 +1,5 @@
 import { DirectivesModule } from './directives/directives.module';
-import { GalleryModalPage } from 'src/app/components/gallery-modal/gallery-modal.page';
+import { GalleryModalComponent } from './components/gallery-modal/gallery-modal.component';
 
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -18,14 +18,14 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireStorageModule } from 'angularfire2/storage';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    GalleryModalPage
+    AppComponent
   ],
   entryComponents: [
-    GalleryModalPage
+    GalleryModalComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +36,8 @@ import { AngularFireStorageModule } from 'angularfire2/storage';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule.enablePersistence(),
     AngularFireAuthModule,
-    AngularFireStorageModule
+    AngularFireStorageModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [
     StatusBar,

@@ -10,11 +10,11 @@ import { AppInfoService } from './../../../services/app-info.service';
 })
 export class SliderComponent implements OnInit {
 
-  private slideOpts = {};
+  public slideOpts = {};
 
   constructor(
-    private info: AppInfoService,
-    private media: MediaService
+    public info: AppInfoService,
+    public media: MediaService
   ) { }
 
   ngOnInit() {

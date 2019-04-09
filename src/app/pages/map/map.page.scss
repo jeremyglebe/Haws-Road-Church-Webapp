@@ -1,9 +1,29 @@
 .MyMap{
-    position: relative;
-    left: 25%;
-    top: 10px;
-    width: 50%;
-    height: 50%;
-    border: 3px;
-    padding-bottom: 20px;
+    @media(min-width: 0px){
+        position: relative;
+        left: 7%;
+        top: 5px;
+        width: 86%;
+        height: 50%;
+        border: 3px;
+        padding-bottom: 10px;
+    }
+    @media(min-width: 640px){
+        position: relative;
+        left: 25%;
+        top: 10px;
+        width: 50%;
+        height: 50%;
+        border: 3px;
+        padding-bottom: 20px;
+    }
+}
+
+ion-button{
+    @media(min-width: 0px){
+        font-size: 0.7rem;
+    }
+    @media(min-width: 640px){
+        font-size: 2rem;
+    }
 }
