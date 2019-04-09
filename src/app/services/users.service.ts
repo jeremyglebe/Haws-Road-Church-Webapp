@@ -12,6 +12,7 @@ export class UsersService {
   // Collections
   private usersListener: Observable<any>;
   private usersList: any;
+  private dirListener: Observable<any>;
   private directory: any[];
 
   constructor(
@@ -25,17 +26,14 @@ export class UsersService {
       // Store users changes in the userList object
       this.usersList = changes;
       console.log('Changes to users: ', changes)
+    });
 
-      // Maintaining the directory of public users
-      // First clear it so that removed users are no longer in it
-      this.directory = [];
-      // Now get the public useres
-      const directory_snap = await afs.collection('apps/ccip/users').ref.where('public', '==', true).get();
-      // For each document, add it to the directory
-      directory_snap.docs.forEach(async (doc) => {
-        this.directory.push(doc.data());
-      });
-
+    // Get a listener for the users collection
+    this.dirListener = afs.collection('apps/ccip/directory').valueChanges();
+    this.dirListener.subscribe(async (changes) => {
+      // Store users changes in the userList object
+      this.directory = changes;
+      console.log('Changes to directory: ', changes)
     });
 
     // Determines whether login persists between sessions
@@ -158,6 +156,15 @@ export class UsersService {
         .doc(uid).update({
           'public': !current
         });
+      // Add or remove the user from the directory
+      if (!current) {
+        // If the user is not in the directory and is being added to it
+        await this.afs.collection('apps/ccip/directory')
+          .doc(uid).set(doc);
+      } else {
+        // If the user is in the directory and is being removed
+        await this.afs.collection('apps/ccip/directory').doc(uid).delete();
+      }
     } catch (e) {
       throw e;
     }
