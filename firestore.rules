@@ -3,15 +3,15 @@ service cloud.firestore {
 
 		// Rules for USERS
     match /apps/ccip/users/{docid} {
-      //allow read: if isSignedIn() && (request.auth.uid == docid || userHasRole('users'));
-      //allow create: if isSignedIn();
-      //allow update: if request.auth.uid == docid || userHasRole('users');
-      allow read, write;
+      allow read: if isSignedIn() && (request.auth.uid == docid || userHasRole('users'));
+      allow create: if isSignedIn();
+      allow update: if request.auth.uid == docid || userHasRole('users');
     }
 
 		// Rules for DIRECTORY
     match /apps/ccip/directory/{docid} {
-      allow read, write;
+      allow read;
+      allow write: if isSignedIn() && userHasRole('directory');
     }
 
 		// Rules for GALLERY
