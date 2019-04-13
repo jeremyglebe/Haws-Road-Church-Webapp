@@ -1,0 +1,34 @@
+ion-card{
+    text-align: center;
+    --background: var(--color-dark-back);
+    --color: var(--ion-color-light);
+    width: 100%;
+    audio {
+        display: block;
+        width: 100%;
+    }
+    @media(min-width: 0px){
+        ion-card-title{
+            color: var(--ion-color-light);
+            text-align: center;
+            font-size: 1rem;
+        }
+        ion-card-subtitle{
+            color: var(--ion-color-light);
+            text-align: center;
+            font-size: 0.8rem;
+        }
+    }
+    @media(min-width: 640px){
+        ion-card-title{
+            color: var(--ion-color-light);
+            text-align: center;
+            font-size: 1.2rem;
+        }
+        ion-card-subtitle{
+            color: var(--ion-color-light);
+            text-align: center;
+            font-size: 1rem;
+        }
+    }
+}

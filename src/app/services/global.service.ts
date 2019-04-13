@@ -42,6 +42,14 @@ export class GlobalService {
       url: '/gallery',
       // Icon for buttons
       icon: 'photos'
+    },
+    {
+      // Title for the button
+      title: 'Recordings',
+      // URL to direct to
+      url: '/recordings',
+      // Icon for buttons
+      icon: 'microphone'
     }
   ];
 

@@ -1,0 +1,25 @@
+<ion-card>
+
+  <ion-card-header>
+    <ion-card-title>{{record_info['caption']}}</ion-card-title>
+  </ion-card-header>
+
+  <audio controls *ngIf="record_info['type']=='audio'">
+    <source src="{{record_info['link']}}">
+    Your browser does not support the audio element.
+  </audio>
+
+  <video width="100%" height="auto" controls *ngIf="record_info['type']=='video'">
+    <source src="{{record_info['link']}}">
+      Your browser does not support the video tag.
+  </video>
+
+  <ion-card-content>
+    <ion-card-subtitle *ngIf="record_info['time']">
+      {{record_info['time'].toDate().toDateString()}}
+      <br>
+      {{record_info['time'].toDate().toLocaleTimeString().split(' ')[0]}}
+    </ion-card-subtitle>
+  </ion-card-content>
+
+</ion-card>
