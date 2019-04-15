@@ -27,14 +27,15 @@
       <br>
       {{belief['scripture']}}.
       <br>
-      <ion-button fill="clear" color="danger" (click)="delete(belief['statement'], belief['scripture'])">
+      <ion-button fill="clear" color="danger" (click)="delete(belief['statement'], belief['scripture'])"
+        *ngIf="users.hasRole('beliefs')">
         <ion-icon slot="icon-only" name="trash"></ion-icon>
       </ion-button>
       <ion-item-divider></ion-item-divider>
     </div>
   </div>
 
-  <ion-button size="small" expand="full" fill="clear" (click)="addBeliefPage()">
+  <ion-button size="small" expand="full" fill="clear" (click)="addBeliefPage()" *ngIf="users.hasRole('beliefs')">
     Add a new belief to this list
   </ion-button>
 

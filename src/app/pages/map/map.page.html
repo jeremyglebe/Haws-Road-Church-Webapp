@@ -13,7 +13,7 @@
         Directions from {{loc['name']}}
       </ion-button>
 
-      <ion-button fill="clear" color="danger" size="large" expand="block" (click)="delete(loc['lat'], loc['lon'])">
+      <ion-button fill="clear" color="danger" size="large" expand="block" (click)="delete(loc['lat'], loc['lon'])" *ngIf="users.hasRole('navigation')">
         <ion-icon slot="icon-only" name="trash"></ion-icon>
       </ion-button>
 
@@ -25,7 +25,7 @@
     I don't need directions (Reset to original map)
   </ion-button>
 
-  <ion-button size="small" expand="full" fill="clear" (click)="addMapPage()">
+  <ion-button size="small" expand="full" fill="clear" (click)="addMapPage()" *ngIf="users.hasRole('navigation')">
     Add a new map to this list
   </ion-button>
 

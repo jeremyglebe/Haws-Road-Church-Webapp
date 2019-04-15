@@ -3,7 +3,7 @@
 <ion-content padding>
   <app-page-tabs></app-page-tabs>
 
-  <ion-button size="small" expand="full" fill="clear" (click)="addImagePage()">
+  <ion-button size="small" expand="full" fill="clear" (click)="addImagePage()" *ngIf="users.hasRole('gallery')">
     Add a new image to the gallery
   </ion-button>
 
