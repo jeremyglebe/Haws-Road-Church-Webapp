@@ -1,3 +1,4 @@
+import { UsersService } from './../../services/users.service';
 import { GlobalService } from './../../services/global.service';
 import { Component, OnInit } from '@angular/core';
 import { NavParams, ModalController } from '@ionic/angular';
@@ -19,7 +20,8 @@ export class GalleryModalComponent implements OnInit {
     private params: NavParams,
     public g: GlobalService,
     private modalCtrl: ModalController,
-    private media: MediaService
+    private media: MediaService,
+    public users: UsersService
   ) { }
 
   ngOnInit() {

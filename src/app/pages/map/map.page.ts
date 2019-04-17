@@ -1,3 +1,4 @@
+import { UsersService } from './../../services/users.service';
 import { Component, OnInit } from '@angular/core';
 import { NavigationService } from 'src/app/services/navigation.service';
 import { NavController } from '@ionic/angular';
@@ -17,7 +18,8 @@ export class MapPage implements OnInit {
 
   constructor(
     public navs: NavigationService,
-    private navCtrl: NavController
+    private navCtrl: NavController,
+    public users: UsersService
   ) { }
 
   ngOnInit() {

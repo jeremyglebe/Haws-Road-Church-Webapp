@@ -37,7 +37,7 @@ export class UsersService {
     });
 
     // Determines whether login persists between sessions
-    afauth.auth.setPersistence('none');
+    // afauth.auth.setPersistence('none');
 
   }
 
@@ -72,6 +72,17 @@ export class UsersService {
     } catch (e) {
       throw e;
     }
+  }
+
+  hasRole(role: string) {
+    if (this.getCurrentUid()) {
+      for (const user of this.usersList) {
+        if (user['uid'] === this.getCurrentUid() && user['roles'][role]) {
+          return true;
+        }
+      }
+    }
+    return false;
   }
 
   getCurrentUid() {
