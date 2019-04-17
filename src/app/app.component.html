@@ -34,7 +34,7 @@
         <!-- CONDITIONAL BUTTONS -->
 
         <!-- USER MANAGEMENT -->
-        <ion-menu-toggle auto-hide="false" *ngIf="authorized">
+        <ion-menu-toggle auto-hide="false" *ngIf="authorized && users.hasRole('users')">
           <ion-item [routerDirection]="'root'" routerLink="/users">
             <ion-icon slot="start" name="contacts"></ion-icon>
             <ion-label>Users</ion-label>
