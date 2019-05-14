@@ -76,17 +76,37 @@ export class UploadTaskComponent implements OnInit {
       finalize(async () => {
         this.downloadURL = await ref.getDownloadURL().toPromise();
 
-        // Update firestore on completion
-        this.db.collection('apps/ccip/gallery')
-          .add({
-            path,
-            time: new Date(),
-            caption: this.caption,
-            feature: false,
-            link: this.downloadURL,
-            userID: 'ids are not implemented yet',
-            type: type
-          });
+        switch (type) {
+          case 'image':
+            // Update firestore on completion
+            this.db.collection('apps/ccip/gallery')
+              .add({
+                path,
+                time: new Date(),
+                caption: this.caption,
+                feature: false,
+                link: this.downloadURL,
+                userID: 'ids are not implemented yet',
+                type: type
+              });
+            break;
+          case 'audio':
+          case 'video':
+          // Update firestore on completion
+          this.db.collection('apps/ccip/recordings')
+            .add({
+              path,
+              time: new Date(),
+              caption: this.caption,
+              feature: false,
+              link: this.downloadURL,
+              userID: 'ids are not implemented yet',
+              type: type
+            });
+            break;
+          default:
+            break;
+        }
 
       }),
     );

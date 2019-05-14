@@ -3,7 +3,7 @@
 <ion-content padding>
   <app-page-tabs></app-page-tabs>
 
-  <ion-button size="small" expand="full" fill="clear">
+  <ion-button size="small" expand="full" fill="clear" (click)="addRecordPage()" *ngIf="users.hasRole('recordings')">
     Add a new recording to this page
   </ion-button>
 
