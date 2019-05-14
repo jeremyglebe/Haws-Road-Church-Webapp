@@ -25,7 +25,7 @@ export class UsersService {
     this.usersListener.subscribe(async (changes) => {
       // Store users changes in the userList object
       this.usersList = changes;
-      console.log('Changes to users: ', changes)
+      console.log('Changes to users: ', changes);
     });
 
     // Get a listener for the users collection
@@ -77,7 +77,7 @@ export class UsersService {
   hasRole(role: string) {
     if (this.getCurrentUid()) {
       for (const user of this.usersList) {
-        if (user['uid'] === this.getCurrentUid() && user['roles'][role]) {
+        if (user['uid'] === this.getCurrentUid() && user['roles'] && user['roles'][role]) {
           return true;
         }
       }
@@ -145,6 +145,36 @@ export class UsersService {
       await this.afs.collection('apps/ccip/users')
         .doc(uid).update({
           photoURL: url
+        });
+    } catch (e) {
+      throw e;
+    }
+  }
+
+  async toggleUserRole(uid: string, role: string) {
+    let current = false;
+    try {
+      // Get the current role status of the user
+      const docRef = await this.afs.collection('apps/ccip/users').doc(uid).ref.get();
+      const doc = docRef.data();
+      if (doc['roles'] && doc['roles'][role]) {
+        current = doc['roles'][role];
+      } else {
+        current = false;
+      }
+      // Create an object with the role in it
+      const roles: any = {};
+      roles['users'] = doc['roles']['users'] || false;
+      roles['directory'] = doc['roles']['directory'] || false;
+      roles['gallery'] = doc['roles']['gallery'] || false;
+      roles['recordings'] = doc['roles']['recordings'] || false;
+      roles['navigation'] = doc['roles']['navigation'] || false;
+      roles['beliefs'] = doc['roles']['beliefs'] || false;
+      roles[role] = !current;
+      // Update the user's role
+      await this.afs.collection('apps/ccip/users')
+        .doc(uid).update({
+          'roles': roles
         });
     } catch (e) {
       throw e;

@@ -1,14 +1,40 @@
 <app-header page_title="User Management"></app-header>
 
 <ion-content padding>
-    <app-page-tabs></app-page-tabs>
+  <app-page-tabs></app-page-tabs>
 
-    <div class="DirTitle"><b>Users</b></div>
-    <ion-item-divider></ion-item-divider>
-    <div text-center *ngFor="let user of users.getUsersList()">
-      <app-user-card [user_info]="user"></app-user-card>
-      <ion-button *ngIf="user.public" (click)="users.toggleUserPublic(user.uid)">Remove from public directory</ion-button>
-      <ion-button *ngIf="!user.public" (click)="users.toggleUserPublic(user.uid)">Add to public directory</ion-button>
-    </div>
+  <div class="DirTitle"><b>Users</b></div>
+  <ion-item-divider></ion-item-divider>
+  <div text-center *ngFor="let user of users.getUsersList()">
+    <app-user-card [user_info]="user"></app-user-card>
+    <!-- Buttons to enable/disable public entry -->
+    <ion-button *ngIf="user.public" (click)="users.toggleUserPublic(user.uid)">Remove from public directory</ion-button>
+    <ion-button *ngIf="!user.public" (click)="users.toggleUserPublic(user.uid)">Add to public directory</ion-button>
+    <!-- Buttons to enable/disable users role -->
+    <ion-button *ngIf="user.roles && user.roles['users']" (click)="users.toggleUserRole(user.uid, 'users')">Do not allow
+      user to edit users & permissions</ion-button>
+    <ion-button *ngIf="!user.roles || !user.roles['users']" (click)="users.toggleUserRole(user.uid, 'users')">Allow user
+      to edit users & permissions</ion-button>
+    <!-- Buttons to enable/disable gallery role -->
+    <ion-button *ngIf="user.roles && user.roles['gallery']" (click)="users.toggleUserRole(user.uid, 'gallery')">Do not
+      allow user to edit gallery page</ion-button>
+    <ion-button *ngIf="!user.roles || !user.roles['gallery']" (click)="users.toggleUserRole(user.uid, 'gallery')">Allow
+      user to edit gallery page</ion-button>
+    <!-- Buttons to enable/disable navigation role -->
+    <ion-button *ngIf="user.roles && user.roles['navigation']" (click)="users.toggleUserRole(user.uid, 'navigation')">Do not
+      allow user to edit maps page</ion-button>
+    <ion-button *ngIf="!user.roles || !user.roles['navigation']" (click)="users.toggleUserRole(user.uid, 'navigation')">Allow
+      user to edit maps page</ion-button>
+    <!-- Buttons to enable/disable recordings role -->
+    <ion-button *ngIf="user.roles && user.roles['recordings']" (click)="users.toggleUserRole(user.uid, 'recordings')">Do not
+      allow user to edit recordings page</ion-button>
+    <ion-button *ngIf="!user.roles || !user.roles['recordings']" (click)="users.toggleUserRole(user.uid, 'recordings')">Allow
+      user to edit recordings page</ion-button>
+    <!-- Buttons to enable/disable beliefs role -->
+    <ion-button *ngIf="user.roles && user.roles['beliefs']" (click)="users.toggleUserRole(user.uid, 'beliefs')">Do not
+      allow user to edit beliefs page</ion-button>
+    <ion-button *ngIf="!user.roles || !user.roles['beliefs']" (click)="users.toggleUserRole(user.uid, 'beliefs')">Allow
+      user to edit beliefs page</ion-button>
+  </div>
 
 </ion-content>

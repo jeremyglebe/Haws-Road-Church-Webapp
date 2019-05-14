@@ -1,7 +1,7 @@
 service cloud.firestore {
   match /databases/{database}/documents {
 
-		// Rules for USERS
+		// Rules for APP
     match /apps/ccip {
       allow read;
     }
@@ -16,7 +16,7 @@ service cloud.firestore {
 		// Rules for DIRECTORY
     match /apps/ccip/directory/{docid} {
       allow read;
-      allow write: if isSignedIn() && userHasRole('directory');
+      allow write: if isSignedIn() && userHasRole('users');
     }
 
 		// Rules for GALLERY

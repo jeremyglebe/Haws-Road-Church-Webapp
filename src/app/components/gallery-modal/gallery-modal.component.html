@@ -28,7 +28,7 @@
             Page</ion-button>
         <ion-button expand="block" *ngIf="featured && users.hasRole('gallery')" (click)="feature()">Remove from Welcome
             Page</ion-button>
-        <ion-button expand="block" (click)="close()" )>Close</ion-button>
+        <ion-button expand="block" (click)="close()">Close</ion-button>
         <ion-button expand="block" color="danger" (click)="delete()" *ngIf="users.hasRole('gallery')">Delete from
             website</ion-button>
     </div>

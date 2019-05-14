@@ -23,7 +23,7 @@ export class AddMapPage implements OnInit {
 
   add(){
     // Add the new map
-    this.navs.addMap(this.name, parseInt(this.latitude, 10), parseInt(this.longitude, 10));
+    this.navs.addMap(this.name, parseFloat(this.latitude), parseFloat(this.longitude));
     this.navCtrl.navigateRoot('/map');
   }
 
