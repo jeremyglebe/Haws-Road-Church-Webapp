@@ -1,0 +1,37 @@
+body {
+    font-family: sans-serif;
+  }
+  .input-container {
+    margin: 3em auto;
+    max-width: 300px;
+    background-color: var(--color-dark-back);
+    border: 1px solid var(--ion-color-dark);
+    border-radius: 5px;
+  }
+  input[type='file'] {
+    display: none;
+  }
+  .file-info {
+    color: var(--ion-color-light);
+  }
+  .browse-btn {
+    background: var(--ion-color-primary);
+    color: var(--ion-color-light);
+    min-height: 35px;
+    padding: 10px;
+    border: none;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
+  @media (max-width: 300px) {
+    button {
+      width: 100%;
+      border-top-right-radius: 5px;
+      border-bottom-left-radius: 0;
+    }
+    
+    .file-info {
+      display: block;
+      margin: 10px 5px;
+    }
+  }

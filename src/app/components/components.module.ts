@@ -11,6 +11,7 @@ import { UploadTaskComponent } from './upload-task/upload-task.component';
 import { DirectivesModule } from '../directives/directives.module';
 import { GalleryModalComponent } from './gallery-modal/gallery-modal.component';
 import { RecordCardComponent } from './record-card/record-card.component';
+import { FileUploadComponent } from './file-upload/file-upload.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { RecordCardComponent } from './record-card/record-card.component';
     UploaderComponent,
     UploadTaskComponent,
     GalleryModalComponent,
-    RecordCardComponent
+    RecordCardComponent,
+    FileUploadComponent
   ],
   imports: [
     CommonModule,
@@ -34,7 +36,8 @@ import { RecordCardComponent } from './record-card/record-card.component';
     UploaderComponent,
     UploadTaskComponent,
     GalleryModalComponent,
-    RecordCardComponent
+    RecordCardComponent,
+    FileUploadComponent
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
