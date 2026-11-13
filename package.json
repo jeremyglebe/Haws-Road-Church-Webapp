@@ -27,7 +27,7 @@
     "@ionic-native/splash-screen": "^5.0.0",
     "@ionic-native/status-bar": "^5.0.0",
     "@ionic/angular": "^4.0.0",
-    "angularfire2": "^5.1.1",
+    "angularfire2": "^5.4.2",
     "color": "^3.1.0",
     "cordova-browser": "5.0.4",
     "cordova-plugin-camera": "git+https://github.com/apache/cordova-plugin-camera.git",
@@ -38,7 +38,7 @@
     "cordova-plugin-statusbar": "^2.4.2",
     "cordova-plugin-whitelist": "^1.3.3",
     "core-js": "^2.5.4",
-    "firebase": "^5.8.2",
+    "firebase": "^13.3.0",
     "rxjs": "^6.3.3",
     "zone.js": "~0.8.29"
   },
